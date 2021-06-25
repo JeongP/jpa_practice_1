@@ -83,6 +83,7 @@ public class Order {
         for (OrderItem orderItem : orderItems) {
             totalPrice += orderItem.getTotalPrice();
         }
+        return totalPrice;
     }
 
 }
