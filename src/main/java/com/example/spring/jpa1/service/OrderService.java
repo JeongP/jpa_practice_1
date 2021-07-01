@@ -1,9 +1,6 @@
 package com.example.spring.jpa1.service;
 
-import com.example.spring.jpa1.domain.Delivery;
-import com.example.spring.jpa1.domain.Member;
-import com.example.spring.jpa1.domain.Order;
-import com.example.spring.jpa1.domain.OrderItem;
+import com.example.spring.jpa1.domain.*;
 import com.example.spring.jpa1.domain.item.Item;
 import com.example.spring.jpa1.repository.ItemRepository;
 import com.example.spring.jpa1.repository.MemberRepository;
@@ -57,7 +54,7 @@ public class OrderService {
     }
 
     // 검색
-//    public List<Order> findOrders(OrderSearch orderSearch) {
-//
-//    }
+    public List<Order> findOrders(OrderSearch orderSearch) {
+        return orderRepository.findAllByString(orderSearch);
+    }
 }
