@@ -1,5 +1,6 @@
 package com.example.spring.jpa1.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,6 +23,7 @@ public class Member {
     @Embedded
     private Address address;
 
+    // @JsonIgnore -> json으로 반환할 때, 이 부분은 무시하겠다.
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
 }
