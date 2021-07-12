@@ -24,6 +24,7 @@ public class Member {
     private Address address;
 
     // @JsonIgnore -> json으로 반환할 때, 이 부분은 무시하겠다.
+    @JsonIgnore
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
 }
